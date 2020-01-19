@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-	<context id="context1">
+	<context id="context1" targetRuntime="MyBatis3DynamicSql">
 		<jdbcConnection
 			connectionURL="${mybatis.connectionUrl}"
 			driverClass="${mybatis.driverClass}" password="${mybatis.password}" userId="${mybatis.user}" />
 		<javaModelGenerator
-			targetPackage="${mybatis.javamodel}" targetProject="src/main/java" />
+			targetPackage="${mybatis.javamodel}" targetProject="${mybatis.targetProject.javamodel}" />
 		<sqlMapGenerator targetPackage="${mybatis.mapper}"
-			targetProject="src/main/resources" />
+			targetProject="${mybatis.targetProject.mapper}" />
 		<javaClientGenerator
-			targetPackage="${mybatis.mapper}" targetProject="src/main/java"
+			targetPackage="${mybatis.mapper}" targetProject="${mybatis.targetProject.javaclient}"
 			type="XMLMAPPER" />
 		<table schema="${mybatis.schemadb}" tableName="%">
 

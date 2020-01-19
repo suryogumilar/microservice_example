@@ -2,7 +2,7 @@
 
 run via eclipse :
 
-set goalnya ke  : clean properties:read-project-properties mybatis-generator:generate
+set goalnya ke  : properties:read-project-properties clean mybatis-generator:generate
 dan profiles ke : devel
 
 *clean* dan *properties:read-project-properties* diperlukan agar file .properties terbaca saat menjalankan generator plugin

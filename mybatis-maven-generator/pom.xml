@@ -18,7 +18,7 @@
 		<!-- =============================================================== -->
 		<!-- MAVEN PLUGINS -->
 		<!-- =============================================================== -->
-		<maven-clean-plugin.version>2.5</maven-clean-plugin.version>
+		<maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
 		<maven-mybatis-gen-plugin.version>1.4.0</maven-mybatis-gen-plugin.version>
 		<maven-plugin-properties.version>1.0.0</maven-plugin-properties.version>
 	</properties>
@@ -68,6 +68,29 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>${maven-clean-plugin.version}</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<!-- some/relative/path -->
+							<directory>${mybatis.targetProject.javamodel}</directory>
+							<includes>
+								<include>**/*.java</include>
+							</includes>
+						</fileset>
+						<fileset>
+							<!-- some/relative/path -->
+							<directory>src/main/resources</directory>
+							<includes>
+								<include>**/*.xml</include>
+							</includes>
+						</fileset>
+					</filesets>
+					<followSymlinks>false</followSymlinks>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>properties-maven-plugin</artifactId>
