@@ -1,0 +1,6 @@
+.metadata/
+.settings/
+.classpath
+.project
+mybatis-maven-generator/src
+target/

@@ -1,0 +1,126 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sg.lab</groupId>
+	<artifactId>mybatis-maven-generator</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>mybatis-maven-generator</name>
+	<description>mybatis-maven-generator</description>
+	<!-- Properties -->
+	<!-- =============================================================== -->
+	<properties>
+
+		<!-- mysql connector -->
+		<mysql-connector-java.version>8.0.15</mysql-connector-java.version>
+		<mybatis.version>3.5.3</mybatis.version>
+		<mybatis-dynamic-sql.version>1.1.4</mybatis-dynamic-sql.version>
+		<!-- =============================================================== -->
+		<!-- MAVEN PLUGINS -->
+		<!-- =============================================================== -->
+		<maven-clean-plugin.version>2.5</maven-clean-plugin.version>
+		<maven-mybatis-gen-plugin.version>1.4.0</maven-mybatis-gen-plugin.version>
+		<maven-plugin-properties.version>1.0.0</maven-plugin-properties.version>
+	</properties>
+
+	<dependencies>
+		<!-- cuma biar ga merah2 saat habis generated -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.dynamic-sql</groupId>
+			<artifactId>mybatis-dynamic-sql</artifactId>
+			<version>${mybatis-dynamic-sql.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+	<!-- PROFILES -->
+	<!-- =============================================================== -->
+
+	<profiles>
+		<profile>
+			<id>devel</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<build.profile.id>devel</build.profile.id>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>test</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<build.profile.id>test</build.profile.id>
+			</properties>
+		</profile>
+
+	</profiles>
+	<!-- ===================== Build ===================== -->
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>${maven-plugin-properties.version}</version>
+				<configuration>
+					<files>
+						<file>${project.basedir}/profiles/${build.profile.id}/config.properties</file>
+					</files>
+				</configuration>
+				<executions>
+					<!-- Load properties for the default lifecycle -->
+					<execution>
+						<id>default-lifecycle-properties</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>read-project-properties</goal>
+						</goals>
+					</execution>
+					<!-- Load properties for the clean lifecycle -->
+					<!-- diperlukan saat run maven, didahului dengan clean agar properties 
+						file terbaca -->
+					<execution>
+						<id>clean-lifecycle-properties</id>
+						<phase>pre-clean</phase>
+						<goals>
+							<goal>read-project-properties</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>${maven-mybatis-gen-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>Generate MyBatis Artifacts</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<!-- jdbc -->
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>${mysql-connector-java.version}</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
