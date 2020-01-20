@@ -12,7 +12,13 @@
 		<javaClientGenerator
 			targetPackage="${mybatis.mapper}" targetProject="${mybatis.targetProject.javaclient}"
 			type="XMLMAPPER" />
-		<table schema="${mybatis.schemadb}" tableName="%">
+		<table schema="${mybatis.schemadb}" tableName="DATA_PESERTA">
+
+		</table>
+		<table schema="${mybatis.schemadb}" tableName="KANTOR_CABANG">
+
+		</table>
+		<table schema="${mybatis.schemadb}" tableName="CREDENTIAL_WEBAPP">
 
 		</table>
 

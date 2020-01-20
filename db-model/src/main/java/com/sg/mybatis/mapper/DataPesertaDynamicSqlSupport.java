@@ -6,25 +6,25 @@ import org.mybatis.dynamic.sql.SqlColumn;
 import org.mybatis.dynamic.sql.SqlTable;
 
 public final class DataPesertaDynamicSqlSupport {
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.425+07:00", comments="Source Table: DATA_PESERTA")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.217+07:00", comments="Source Table: DATA_PESERTA")
     public static final DataPeserta dataPeserta = new DataPeserta();
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.425+07:00", comments="Source field: DATA_PESERTA.ID")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.218+07:00", comments="Source field: DATA_PESERTA.ID")
     public static final SqlColumn<Integer> id = dataPeserta.id;
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.425+07:00", comments="Source field: DATA_PESERTA.NOMOR_PESERTA")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.219+07:00", comments="Source field: DATA_PESERTA.NOMOR_PESERTA")
     public static final SqlColumn<Integer> nomorPeserta = dataPeserta.nomorPeserta;
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.425+07:00", comments="Source field: DATA_PESERTA.NIK")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.219+07:00", comments="Source field: DATA_PESERTA.NIK")
     public static final SqlColumn<Integer> nik = dataPeserta.nik;
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.425+07:00", comments="Source field: DATA_PESERTA.NAMA_PESERTA")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.219+07:00", comments="Source field: DATA_PESERTA.NAMA_PESERTA")
     public static final SqlColumn<String> namaPeserta = dataPeserta.namaPeserta;
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.425+07:00", comments="Source field: DATA_PESERTA.ALAMAT_PESERTA")
-    public static final SqlColumn<Integer> alamatPeserta = dataPeserta.alamatPeserta;
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.219+07:00", comments="Source field: DATA_PESERTA.ALAMAT_PESERTA")
+    public static final SqlColumn<String> alamatPeserta = dataPeserta.alamatPeserta;
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.425+07:00", comments="Source Table: DATA_PESERTA")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.217+07:00", comments="Source Table: DATA_PESERTA")
     public static final class DataPeserta extends SqlTable {
         public final SqlColumn<Integer> id = column("ID", JDBCType.INTEGER);
 
@@ -34,7 +34,7 @@ public final class DataPesertaDynamicSqlSupport {
 
         public final SqlColumn<String> namaPeserta = column("NAMA_PESERTA", JDBCType.VARCHAR);
 
-        public final SqlColumn<Integer> alamatPeserta = column("ALAMAT_PESERTA", JDBCType.INTEGER);
+        public final SqlColumn<String> alamatPeserta = column("ALAMAT_PESERTA", JDBCType.VARCHAR);
 
         public DataPeserta() {
             super("DATA_PESERTA");

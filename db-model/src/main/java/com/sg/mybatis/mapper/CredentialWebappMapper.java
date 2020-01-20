@@ -34,31 +34,31 @@ import org.mybatis.dynamic.sql.util.mybatis3.MyBatis3Utils;
 
 @Mapper
 public interface CredentialWebappMapper {
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.275+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     BasicColumn[] selectList = BasicColumn.columnList(id, username, password);
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.354+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.273+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     @SelectProvider(type=SqlProviderAdapter.class, method="select")
     long count(SelectStatementProvider selectStatement);
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.354+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.273+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     @DeleteProvider(type=SqlProviderAdapter.class, method="delete")
     int delete(DeleteStatementProvider deleteStatement);
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.354+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.273+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     @InsertProvider(type=SqlProviderAdapter.class, method="insert")
     int insert(InsertStatementProvider<CredentialWebapp> insertStatement);
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.354+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.273+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     @InsertProvider(type=SqlProviderAdapter.class, method="insertMultiple")
     int insertMultiple(MultiRowInsertStatementProvider<CredentialWebapp> multipleInsertStatement);
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.354+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.274+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     @SelectProvider(type=SqlProviderAdapter.class, method="select")
     @ResultMap("CredentialWebappResult")
     Optional<CredentialWebapp> selectOne(SelectStatementProvider selectStatement);
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.354+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.274+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     @SelectProvider(type=SqlProviderAdapter.class, method="select")
     @Results(id="CredentialWebappResult", value = {
         @Result(column="ID", property="id", jdbcType=JdbcType.INTEGER, id=true),
@@ -67,28 +67,28 @@ public interface CredentialWebappMapper {
     })
     List<CredentialWebapp> selectMany(SelectStatementProvider selectStatement);
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.274+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     @UpdateProvider(type=SqlProviderAdapter.class, method="update")
     int update(UpdateStatementProvider updateStatement);
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.274+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default long count(CountDSLCompleter completer) {
         return MyBatis3Utils.countFrom(this::count, credentialWebapp, completer);
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.274+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default int delete(DeleteDSLCompleter completer) {
         return MyBatis3Utils.deleteFrom(this::delete, credentialWebapp, completer);
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.274+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default int deleteByPrimaryKey(Integer id_) {
         return delete(c -> 
             c.where(id, isEqualTo(id_))
         );
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.274+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default int insert(CredentialWebapp record) {
         return MyBatis3Utils.insert(this::insert, record, credentialWebapp, c ->
             c.map(id).toProperty("id")
@@ -97,7 +97,7 @@ public interface CredentialWebappMapper {
         );
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.274+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default int insertMultiple(Collection<CredentialWebapp> records) {
         return MyBatis3Utils.insertMultiple(this::insertMultiple, records, credentialWebapp, c ->
             c.map(id).toProperty("id")
@@ -106,7 +106,7 @@ public interface CredentialWebappMapper {
         );
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.274+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default int insertSelective(CredentialWebapp record) {
         return MyBatis3Utils.insert(this::insert, record, credentialWebapp, c ->
             c.map(id).toPropertyWhenPresent("id", record::getId)
@@ -115,48 +115,48 @@ public interface CredentialWebappMapper {
         );
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.275+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default Optional<CredentialWebapp> selectOne(SelectDSLCompleter completer) {
         return MyBatis3Utils.selectOne(this::selectOne, selectList, credentialWebapp, completer);
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.275+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default List<CredentialWebapp> select(SelectDSLCompleter completer) {
         return MyBatis3Utils.selectList(this::selectMany, selectList, credentialWebapp, completer);
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.275+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default List<CredentialWebapp> selectDistinct(SelectDSLCompleter completer) {
         return MyBatis3Utils.selectDistinct(this::selectMany, selectList, credentialWebapp, completer);
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.275+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default Optional<CredentialWebapp> selectByPrimaryKey(Integer id_) {
         return selectOne(c ->
             c.where(id, isEqualTo(id_))
         );
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.275+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default int update(UpdateDSLCompleter completer) {
         return MyBatis3Utils.update(this::update, credentialWebapp, completer);
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.275+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     static UpdateDSL<UpdateModel> updateAllColumns(CredentialWebapp record, UpdateDSL<UpdateModel> dsl) {
         return dsl.set(id).equalTo(record::getId)
                 .set(username).equalTo(record::getUsername)
                 .set(password).equalTo(record::getPassword);
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.275+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     static UpdateDSL<UpdateModel> updateSelectiveColumns(CredentialWebapp record, UpdateDSL<UpdateModel> dsl) {
         return dsl.set(id).equalToWhenPresent(record::getId)
                 .set(username).equalToWhenPresent(record::getUsername)
                 .set(password).equalToWhenPresent(record::getPassword);
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.275+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default int updateByPrimaryKey(CredentialWebapp record) {
         return update(c ->
             c.set(username).equalTo(record::getUsername)
@@ -165,7 +165,7 @@ public interface CredentialWebappMapper {
         );
     }
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-19T22:57:06.355+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.275+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
     default int updateByPrimaryKeySelective(CredentialWebapp record) {
         return update(c ->
             c.set(username).equalToWhenPresent(record::getUsername)

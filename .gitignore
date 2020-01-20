@@ -4,3 +4,5 @@
 .project
 mybatis-maven-generator/src
 target/
+/.recommenders/
+tspn_db_poc/
