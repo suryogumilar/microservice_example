@@ -43,19 +43,24 @@ public class DataPesertaRestController {
 	@RequestMapping(name="addDataPeserta",path="/add",method=RequestMethod.POST, consumes = {
 			MediaType.TEXT_PLAIN_VALUE, MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_JSON_UTF8_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE })
-	public DataPesertaResponse insertDataPeserta(@RequestBody DataPeserta dataPeserta) {
+	@Transactional(rollbackFor = Exception.class)
+	public DataPesertaResponse insertDataPeserta(@RequestBody DataPeserta dataPeserta) throws Exception {
 		DataPesertaResponse result = new DataPesertaResponse();
 		
 		dataPesertaMapper.insert(dataPeserta);
 		
 		result.setData(dataPeserta);
 		
-		
+		/*
+		if(dataPeserta.getId() == 3) {
+			throw new Exception("This should force a rollback!");
+		}*/
 		result.setStatus("OK");
 		return result;
 	}
 	
 	@RequestMapping(name="deleteDataPeserta",path="/delete",method=RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+	@Transactional(rollbackFor = Exception.class)
 	public DataPesertaResponse deleteDataPeserta(@RequestParam("id") Integer id){
 		DataPesertaResponse result = new DataPesertaResponse();
 		
