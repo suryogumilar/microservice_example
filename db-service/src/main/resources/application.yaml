@@ -1,0 +1,24 @@
+server:
+  servlet:
+    context-path: "/tspn/servicedb/v1"
+  port: 8089
+
+spring:
+  main: 
+    banner-mode: "off"
+  datasource:
+    url: jdbc:mysql://localhost:33062/taspen_opty?useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    driver: com.mysql.cj.jdbc.Driver
+    username: admin
+    password: passwd
+
+    hikari:
+      maximum-pool-size: 20
+      connection-timeout: 60000 ## in milisec
+
+thread-pool: 10 ## just random property - no actual meaning
+
+logging:
+  level:
+    org.springframework: INFO
+    com.sg: DEBUG
