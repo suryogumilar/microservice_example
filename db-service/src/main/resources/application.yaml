@@ -21,4 +21,6 @@ thread-pool: 10 ## just random property - no actual meaning
 logging:
   level:
     org.springframework: INFO
+    org.mybatis: DEBUG
+    org.ehcache: DEBUG
     com.sg: DEBUG

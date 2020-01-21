@@ -3,8 +3,8 @@
     caching configuration
 -->
 <ehcache>   
-    <defaultCache eternal="true" maxElementsInMemory="10000" timeToIdleSeconds="3600"
+    <defaultCache eternal="false" maxElementsInMemory="10000" timeToIdleSeconds="3600"
         timeToLiveSeconds="3600" maxEntriesLocalHeap="10000" maxEntriesLocalDisk="10000000"
         memoryStoreEvictionPolicy="LRU" statistics="true" />
-
+	
 </ehcache>
