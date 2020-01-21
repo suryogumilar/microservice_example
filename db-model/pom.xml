@@ -14,7 +14,7 @@
 		<!-- setting java version -->
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		
+
 		<mybatis.version>3.5.3</mybatis.version>
 		<mybatis-dynamic-sql.version>1.1.4</mybatis-dynamic-sql.version>
 		<!-- =============================================================== -->
@@ -46,7 +46,19 @@
 			<version>${mybatis-dynamic-sql.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<!-- cached -->
+		<dependency>
+			<groupId>org.mybatis.caches</groupId>
+			<artifactId>mybatis-ehcache</artifactId>
+			<version>1.2.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.10.6</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<!-- ===================== Build ===================== -->
 

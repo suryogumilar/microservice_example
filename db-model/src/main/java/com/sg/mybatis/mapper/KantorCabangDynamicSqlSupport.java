@@ -6,19 +6,19 @@ import org.mybatis.dynamic.sql.SqlColumn;
 import org.mybatis.dynamic.sql.SqlTable;
 
 public final class KantorCabangDynamicSqlSupport {
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.268+07:00", comments="Source Table: KANTOR_CABANG")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: KANTOR_CABANG")
     public static final KantorCabang kantorCabang = new KantorCabang();
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.268+07:00", comments="Source field: KANTOR_CABANG.ID")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: KANTOR_CABANG.ID")
     public static final SqlColumn<Integer> id = kantorCabang.id;
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.269+07:00", comments="Source field: KANTOR_CABANG.NAMA_KC")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: KANTOR_CABANG.NAMA_KC")
     public static final SqlColumn<String> namaKc = kantorCabang.namaKc;
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.269+07:00", comments="Source field: KANTOR_CABANG.ALAMAT_KC")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: KANTOR_CABANG.ALAMAT_KC")
     public static final SqlColumn<String> alamatKc = kantorCabang.alamatKc;
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.268+07:00", comments="Source Table: KANTOR_CABANG")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: KANTOR_CABANG")
     public static final class KantorCabang extends SqlTable {
         public final SqlColumn<Integer> id = column("ID", JDBCType.INTEGER);
 

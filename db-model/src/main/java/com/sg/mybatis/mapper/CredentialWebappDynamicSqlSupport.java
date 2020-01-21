@@ -6,19 +6,19 @@ import org.mybatis.dynamic.sql.SqlColumn;
 import org.mybatis.dynamic.sql.SqlTable;
 
 public final class CredentialWebappDynamicSqlSupport {
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.273+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: CREDENTIAL_WEBAPP")
     public static final CredentialWebapp credentialWebapp = new CredentialWebapp();
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.273+07:00", comments="Source field: CREDENTIAL_WEBAPP.ID")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: CREDENTIAL_WEBAPP.ID")
     public static final SqlColumn<Integer> id = credentialWebapp.id;
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.273+07:00", comments="Source field: CREDENTIAL_WEBAPP.USERNAME")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: CREDENTIAL_WEBAPP.USERNAME")
     public static final SqlColumn<String> username = credentialWebapp.username;
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.273+07:00", comments="Source field: CREDENTIAL_WEBAPP.PASSWORD")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: CREDENTIAL_WEBAPP.PASSWORD")
     public static final SqlColumn<String> password = credentialWebapp.password;
 
-    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2020-01-20T16:44:01.273+07:00", comments="Source Table: CREDENTIAL_WEBAPP")
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: CREDENTIAL_WEBAPP")
     public static final class CredentialWebapp extends SqlTable {
         public final SqlColumn<Integer> id = column("ID", JDBCType.INTEGER);
 
