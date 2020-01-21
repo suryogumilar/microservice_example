@@ -24,6 +24,7 @@
 	</properties>
 
 	<dependencies>
+
 		<!-- cuma biar ga merah2 saat habis generated -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -139,6 +140,12 @@
 						<groupId>mysql</groupId>
 						<artifactId>mysql-connector-java</artifactId>
 						<version>${mysql-connector-java.version}</version>
+					</dependency>
+					<!-- untuk mybatis generator plugin -->
+					<dependency>
+						<groupId>com.sg.lab</groupId>
+						<artifactId>mybatis-maven-generator-plugins</artifactId>
+						<version>0.0.1-SNAPSHOT</version>
 					</dependency>
 				</dependencies>
 				<configuration>

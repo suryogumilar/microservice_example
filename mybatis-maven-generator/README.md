@@ -9,17 +9,14 @@ dan profiles ke : devel
 
 ## Plugin
 
-menggunakan plugin untuk generate cache annotation using [bigpuritz](https://github.com/bigpuritz/mybatis-generator-plugins) plugin
-
-`mvn install:install-file -Dfile=mybatis-generator-plugins-1.0.0.jar -DgroupId=net.javaforge.mybatis.generator -DartifactId=mybatis-generator-plugins -Dversion=1.0.0 -Dpackaging=jar -DlocalRepositoryPath=C:\Warehouse\maven_repo\.m2\repository`
-
+menggunakan plugin untuk generate cache annotation, lihat di folder mybatis-maven-generator-plugins
 lalu add:
 
 ```
 <dependency>
-    <groupId>net.javaforge.mybatis.generator</groupId>
-    <artifactId>mybatis-generator-plugins</artifactId>
-    <version>1.0.0</version>
+    <groupId>com.sg.lab</groupId>
+    <artifactId>mybatis-maven-generator-plugins</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 </dependency>
 ```
 further reading: https://blog.javaforge.net/post/30577502737/mybatis-generator-plugins
