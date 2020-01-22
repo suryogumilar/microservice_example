@@ -107,7 +107,14 @@
 			<artifactId>ehcache</artifactId>
 			<version>2.10.6</version>
 		</dependency>
-
+		<!-- for development , use hot reload when changing source code during development -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<version>${spring-boot-starter.version}</version>
+			<optional>true</optional>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

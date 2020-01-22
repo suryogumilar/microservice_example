@@ -33,6 +33,9 @@
 		<table schema="${mybatis.schemadb}" tableName="CREDENTIAL_WEBAPP">
 
 		</table>
+		<table schema="${mybatis.schemadb}" tableName="PESERTA_KACAB_MAP">
+
+		</table>
 
 	</context>
 </generatorConfiguration>

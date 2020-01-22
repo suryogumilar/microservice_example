@@ -1,18 +1,70 @@
 # Db Service
 
 
-db service
-
-link:
-
-http://localhost:8089/tspn/servicedb/v1/data-peserta/list
-http://localhost:8089/tspn/servicedb/v1/data-peserta/get?id=1
-
-http://localhost:8089/tspn/servicedb/v1/data-peserta/delete?id=3
+## db service
 
 
+## link contoh service
 
-##
 
-https://github.com/bigpuritz/mybatis-generator-plugins/blob/master/mybatis-generator-plugins-tests/src/test/resources/database/generatorConfig.xml
-https://github.com/mybatis/generator/blob/master/core/mybatis-generator-systests-mybatis3/src/main/resources/generatorConfig.xml
+untuk service Data Peserta :   
+ - http://localhost:8089/tspn/servicedb/v1/data-peserta/list   
+ - http://localhost:8089/tspn/servicedb/v1/data-peserta/get?id=1   
+ - http://localhost:8089/tspn/servicedb/v1/data-peserta/query?nama=suryo   
+ - http://localhost:8089/tspn/servicedb/v1/data-peserta/query?nama=Suryo%25&islike=true   
+ - http://localhost:8089/tspn/servicedb/v1/data-peserta/query?nama=suryo%25&islike=true&caseInsensitive=true   
+ - http://localhost:8089/tspn/servicedb/v1/data-peserta/delete?id=3    
+
+
+## Java code notes
+
+Saat menggunakan dynamic sql, digunakan 'import static' (since java 1.5)
+
+```
+// perlu ! import all column definitions for your table
+import static com.sg.mybatis.mapper.DataPesertaDynamicSqlSupport.alamatPeserta;
+import static com.sg.mybatis.mapper.DataPesertaDynamicSqlSupport.dataPeserta;
+import static com.sg.mybatis.mapper.DataPesertaDynamicSqlSupport.id;
+import static com.sg.mybatis.mapper.DataPesertaDynamicSqlSupport.namaPeserta;
+import static com.sg.mybatis.mapper.DataPesertaDynamicSqlSupport.nik;
+import static com.sg.mybatis.mapper.DataPesertaDynamicSqlSupport.nomorPeserta;
+
+
+// perlu ! import the SQL builder
+import static org.mybatis.dynamic.sql.SqlBuilder.isEqualTo;
+import static org.mybatis.dynamic.sql.SqlBuilder.isLike;
+import static org.mybatis.dynamic.sql.SqlBuilder.isLikeCaseInsensitive;
+import static org.mybatis.dynamic.sql.SqlBuilder.select;
+```
+
+sehingga dalam code menggunakan seperti contoh berikut : 
+
+```
+   
+       // org.mybatis.dynamic.sql.SqlBuilder
+		// com.sg.mybatis.mapper.DataPesertaDynamicSqlSupport
+		/*
+		 * Statement dibawah, menggunakan static import..bisa diganti dengan statement seperti berikut : 
+		 * 
+		 * SqlBuilder.select(DataPesertaDynamicSqlSupport.id).from(DataPesertaDynamicSqlSupport.dataPeserta); dst..
+		 * 
+		 * */
+
+		QueryExpressionDSL<SelectModel> qedl =  
+		select(id, nomorPeserta, nik, namaPeserta, alamatPeserta)
+				.from(dataPeserta);
+		if(nama!=null ) {
+			if(isLike!=null && isLike) {
+				if(caseInsensitive!=null && caseInsensitive) {
+					qedl.where(namaPeserta,isLikeCaseInsensitive(nama));				
+				}else {
+					qedl.where(namaPeserta,isLike(nama));									
+				}
+			}else {
+				qedl.where(namaPeserta,isEqualTo(nama));
+			}
+		}
+		SelectStatementProvider selectStatement = qedl.build().render(RenderingStrategies.MYBATIS3);
+		
+		List<DataPeserta> dataPesertaList = dataPesertaMapper.selectMany(selectStatement);
+```
