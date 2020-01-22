@@ -18,6 +18,7 @@ import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.mybatis.dynamic.sql.SqlColumn;
 import org.mybatis.dynamic.sql.render.RenderingStrategies;
 import org.mybatis.dynamic.sql.select.QueryExpressionDSL;
 import org.mybatis.dynamic.sql.select.SelectDSLCompleter;
@@ -34,6 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sg.mybatis.mapper.DataPesertaMapper;
 import com.sg.mybatis.model.DataPeserta;
+import com.sg.springboot.rest.model.DataPesertaRequest;
 import com.sg.springboot.rest.model.DataPesertaResponse;
 
 @RestController
@@ -92,6 +94,53 @@ public class DataPesertaRestController {
 		List<DataPeserta> dataPesertaList = dataPesertaMapper.selectMany(selectStatement);
 		return dataPesertaList;
 	}
+	
+	
+	@RequestMapping(name="queryDataPeserta",path="/query",method=RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE })
+	public List<DataPeserta> queryDataPeserta_post(@RequestBody(required=true) DataPesertaRequest dataPesertaRequest){
+		logger.debug("query data peserta POST");
+		
+		QueryExpressionDSL<SelectModel> qedl =  
+				select(id, nomorPeserta, nik, namaPeserta, alamatPeserta)
+						.from(dataPeserta);
+		
+		DataPeserta dp = dataPesertaRequest.getDataPeserta();
+		String namaPeserta2 = dp.getNamaPeserta();
+		Integer nik2 = dp.getNik();
+		Integer nomorPeserta2 = dp.getNomorPeserta();
+		
+		Boolean useLike = dataPesertaRequest.getUseLike();
+		QueryExpressionDSL<SelectModel>.QueryExpressionWhereBuilder where = qedl.where();
+		if(useLike) {
+			if(namaPeserta2!=null) {
+				where.and(namaPeserta, isLikeCaseInsensitive("%"+namaPeserta2+"%"));
+			}
+			if(nik2!=null) {
+				SqlColumn<String> nik1 = SqlColumn.of("NIK", dataPeserta);
+				where.and(nik1, isLikeCaseInsensitive("%"+nik2.toString()+"%"));
+			}
+			if(nomorPeserta2!=null) {
+				SqlColumn<String> nomorPeserta1 = SqlColumn.of("NOMOR_PESERTA", dataPeserta);
+				where.and(nomorPeserta1, isLikeCaseInsensitive("%"+nomorPeserta2.toString()+"%"));
+			}
+		}else {
+			if(namaPeserta2!=null) {
+				where.and(namaPeserta, isEqualTo(namaPeserta2));
+			}
+			if(nik2!=null) {
+				where.and(nik, isEqualTo(nik2));
+			}
+			if(nomorPeserta2!=null) {
+				where.and(nomorPeserta, isEqualTo(nomorPeserta2));
+			}
+		}
+		SelectStatementProvider selectStatement = qedl.build().render(RenderingStrategies.MYBATIS3);
+		
+		List<DataPeserta> dataPesertaList = dataPesertaMapper.selectMany(selectStatement);
+		return dataPesertaList;
+		
+	}
+	
 	
 	
 	@RequestMapping(name="addDataPeserta",path="/add",method=RequestMethod.POST, consumes = {

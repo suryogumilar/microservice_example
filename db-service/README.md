@@ -16,6 +16,20 @@ untuk service Data Peserta :
  - http://localhost:8089/tspn/servicedb/v1/data-peserta/delete?id=3    
 
 
+## Logging
+
+untuk menampilkan loggin mybatis pada application.yaml set ke TRACE
+
+```
+logging:
+  level:
+    org.springframework: INFO
+    org.mybatis: TRACE
+    org.ehcache: DEBUG
+    com.sg: TRACE
+```
+
+
 ## Java code notes
 
 Saat menggunakan dynamic sql, digunakan 'import static' (since java 1.5)
@@ -68,3 +82,14 @@ sehingga dalam code menggunakan seperti contoh berikut :
 		
 		List<DataPeserta> dataPesertaList = dataPesertaMapper.selectMany(selectStatement);
 ```
+
+### link referensi
+
+mybatis manual:   
+https://mybatis.org/mybatis-dynamic-sql/docs/select.html
+
+mybatis dynamic sql official github   
+https://github.com/mybatis/mybatis-dynamic-sql
+
+contoh pemakaian:   
+https://www.bbsmax.com/A/nAJvRmrnJr/
