@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    caching configuration
+    caching configuration, sepertinya override yg tertulis di Mapper melalui annotation
 -->
 <ehcache>   
-    <defaultCache eternal="false" maxElementsInMemory="10000" timeToIdleSeconds="3600"
-        timeToLiveSeconds="3600" maxEntriesLocalHeap="10000" maxEntriesLocalDisk="10000000"
+    <defaultCache eternal="false" maxElementsInMemory="10000" timeToIdleSeconds="120"
+        timeToLiveSeconds="120" maxEntriesLocalHeap="10000" maxEntriesLocalDisk="10000000"
         memoryStoreEvictionPolicy="LRU" statistics="true" />
 	
 </ehcache>

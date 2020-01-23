@@ -1,0 +1,39 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.sg.mybatis.mapper.PesertaKacabJoinMapMapper">
+
+	<resultMap type="com.sg.mybatis.model.PesertaKacabJoinMap"
+		id="PesertaKacabJoinMapResult_J">
+		<id property="id" column="ID" />
+		<result property="idPeserta" column="ID_PESERTA" />
+		<result property="idKacab" column="ID_KACAB" />
+		<result property="keterangan" column="KETERANGAN" />
+
+
+		<association property="kantorCabang"
+			resultMap="KantorCabangResult_J" columnPrefix="KANTOR_CABANG_"></association>
+		<collection property="dataPeserta"
+			ofType="com.sg.mybatis.model.DataPeserta"
+			resultMap="DataPesertaResult_J" columnPrefix="DATA_PESERTA_"></collection>
+
+
+	</resultMap>
+
+
+	<resultMap type="com.sg.mybatis.model.DataPeserta"
+		id="DataPesertaResult_J">
+		<id property="id" column="ID" />
+		<result property="namaPeserta" column="NAMA_PESERTA" />
+		<result property="nik" column="NIK" />
+
+	</resultMap>
+
+	<resultMap type="com.sg.mybatis.model.KantorCabang"
+		id="KantorCabangResult_J">
+		<id property="id" column="ID" />
+		<result property="namaKc" column="NAMA_KC" />
+		<result property="alamatKc" column="ALAMAT_KC" />
+
+	</resultMap>
+
+</mapper>
