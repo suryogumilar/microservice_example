@@ -42,6 +42,11 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>com.sg.lab</groupId>
+			<artifactId>db-model-extended</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.mybatis.dynamic-sql</groupId>
 			<artifactId>mybatis-dynamic-sql</artifactId>
 			<version>${mybatis-dynamic-sql.version}</version>

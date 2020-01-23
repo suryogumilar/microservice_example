@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.sg.lab</groupId>
+	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>db-model-extended</artifactId>
+	<!-- Properties -->
+	<!-- =============================================================== -->
+	<properties>
+
+		<!-- setting java version -->
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+
+		<mybatis.version>3.5.3</mybatis.version>
+		<mybatis-dynamic-sql.version>1.1.4</mybatis-dynamic-sql.version>
+		<!-- =============================================================== -->
+		<!-- MAVEN PLUGINS -->
+		<!-- =============================================================== -->
+		<maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+		<maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+
+		<!-- Java version, Source Encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source.version>1.8</maven.compiler.source.version>
+		<maven.compiler.target.version>1.8</maven.compiler.target.version>
+
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.sg.lab</groupId>
+			<artifactId>db-model</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- cuma biar ga merah2 saat habis generated -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.dynamic-sql</groupId>
+			<artifactId>mybatis-dynamic-sql</artifactId>
+			<version>${mybatis-dynamic-sql.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- cached -->
+		<dependency>
+			<groupId>org.mybatis.caches</groupId>
+			<artifactId>mybatis-ehcache</artifactId>
+			<version>1.2.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.10.6</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
