@@ -14,7 +14,7 @@ untuk service Data Peserta :
  - http://localhost:8089/tspn/servicedb/v1/data-peserta/query?nama=Suryo%25&islike=true   
  - http://localhost:8089/tspn/servicedb/v1/data-peserta/query?nama=suryo%25&islike=true&caseInsensitive=true   
  - http://localhost:8089/tspn/servicedb/v1/data-peserta/delete?id=3    
-
+ - http://localhost:8089/tspn/servicedb/v1/dp-kc-map/get?id=1
 
 ## Logging
 
