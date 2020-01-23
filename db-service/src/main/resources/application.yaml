@@ -7,7 +7,7 @@ spring:
   main: 
     banner-mode: "off"
   datasource:
-    url: jdbc:mysql://localhost:33062/taspen_opty?useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/taspen_opty?useSSL=false&characterEncoding=utf8&serverTimezone=UTC
     driver: com.mysql.cj.jdbc.Driver
     username: admin
     password: passwd
@@ -20,7 +20,7 @@ thread-pool: 10 ## just random property - no actual meaning
 
 logging:
   level:
-    org.springframework: INFO
-    org.mybatis: TRACE
-    org.ehcache: DEBUG
-    com.sg: TRACE
+    org.springframework: ${LOGGING_LEVEL:INFO}
+    org.mybatis: ${LOGGING_LEVEL:INFO}
+    org.ehcache: ${LOGGING_LEVEL:INFO}
+    com.sg: ${LOGGING_LEVEL:INFO}

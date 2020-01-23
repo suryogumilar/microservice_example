@@ -83,6 +83,13 @@ sehingga dalam code menggunakan seperti contoh berikut :
 		List<DataPeserta> dataPesertaList = dataPesertaMapper.selectMany(selectStatement);
 ```
 
+## Build
+
+untuk compile dan package di eclipse (mvn) pake goal repacakge
+
+'clean compile package spring-boot:repackage'
+
+
 ### link referensi
 
 mybatis manual:   
