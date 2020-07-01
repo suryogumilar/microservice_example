@@ -15,6 +15,27 @@ spring:
     hikari:
       maximum-pool-size: 20
       connection-timeout: 60000 ## in milisec
+  redis:
+    # redis database index (default 0), we use a database with index 3 to avoid conflicts with other databases
+    database: 3
+    # redis server address (localhost by default)
+    host: ${REDIS_HOST}
+    # redis port (default 6379)
+    port: 6379
+    # redis access password (default is empty)
+    password:  ${REDIS_PASSWORD}
+    # redis connection timeout time (in milliseconds)
+    timeout: 0
+    # redis connection pool configuration
+    pool:
+      # Maximum number of connections available (default is 8, negative number means infinite)
+      max-active: 8
+      # Maximum number of free connections (default is 8, negative number means infinite)
+      max-idle: 8
+      # Minimum number of idle connections (default is 0, which only works if it is positive)
+      min-idle: 0
+      # Get the maximum connection waiting time from the connection pool (default is - 1, in milliseconds, and the negative number is infinite)
+      max-wait: -1    
 
 thread-pool: 10 ## just random property - no actual meaning
 

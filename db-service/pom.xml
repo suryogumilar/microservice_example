@@ -19,7 +19,7 @@
 	<!-- =============================================================== -->
 	<!-- A R T I F A C T Description -->
 	<!-- =============================================================== -->
-		
+
 	<artifactId>db-service</artifactId>
 	<name>db service</name>
 	<description>db service using mybatis</description>
@@ -100,15 +100,11 @@
 		</dependency>
 		<!-- cached -->
 		<dependency>
-			<groupId>org.mybatis.caches</groupId>
-			<artifactId>mybatis-ehcache</artifactId>
-			<version>${mybatis-ehcache.version}</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<version>${spring-boot-starter.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>net.sf.ehcache</groupId>
-			<artifactId>ehcache</artifactId>
-			<version>${net.sf.ehcache.version}</version>
-		</dependency>
+
 		<!-- for development , use hot reload when changing source code during 
 			development -->
 		<dependency>

@@ -53,15 +53,9 @@
 		</dependency>
 		<!-- cached -->
 		<dependency>
-			<groupId>org.mybatis.caches</groupId>
-			<artifactId>mybatis-ehcache</artifactId>
-			<version>${mybatis-ehcache.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>net.sf.ehcache</groupId>
-			<artifactId>ehcache</artifactId>
-			<version>${net.sf.ehcache.version}</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<version>${spring-boot-starter.version}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
