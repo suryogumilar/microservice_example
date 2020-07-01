@@ -2,32 +2,31 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.sg.lab</groupId>
+	
+	<!-- =============================================================== -->
+	<!-- P A R E N T Pom -->
+	<!-- =============================================================== -->
+	<!-- Holds dependencies, plugins and their versions. -->
+	<!-- Paths to external repositories... -->
+	<!-- =============================================================== -->
+
+	<parent>
+		<groupId>com.sg.lab</groupId>
+		<artifactId>microservice-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<!-- =============================================================== -->
+	<!-- A R T I F A C T Description -->
+	<!-- =============================================================== -->
+	
 	<artifactId>mybatis-maven-generator-plugins</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<!-- Properties -->
 	<!-- =============================================================== -->
 	<properties>
-
-		<!-- setting java version -->
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<mybatis-generator-core.version>1.4.0</mybatis-generator-core.version>
-
-		<!-- =============================================================== -->
-		<!-- MAVEN PLUGINS -->
-		<!-- =============================================================== -->
-		<maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-		<maven-jar-plugin.version>2.4</maven-jar-plugin.version>
-		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
-
-		<!-- Java version, Source Encoding -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source.version>1.8</maven.compiler.source.version>
-		<maven.compiler.target.version>1.8</maven.compiler.target.version>
-
 	</properties>
+
+	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
 		<dependency>

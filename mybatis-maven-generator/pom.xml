@@ -2,25 +2,31 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.sg.lab</groupId>
+
+	<!-- =============================================================== -->
+	<!-- P A R E N T Pom -->
+	<!-- =============================================================== -->
+	<!-- Holds dependencies, plugins and their versions. -->
+	<!-- Paths to external repositories... -->
+	<!-- =============================================================== -->
+
+	<parent>
+		<groupId>com.sg.lab</groupId>
+		<artifactId>microservice-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	
+	<!-- =============================================================== -->
+	<!-- A R T I F A C T Description -->
+	<!-- =============================================================== -->
+		
 	<artifactId>mybatis-maven-generator</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>mybatis-maven-generator</name>
 	<description>mybatis-maven-generator</description>
 	<!-- Properties -->
 	<!-- =============================================================== -->
 	<properties>
-
-		<!-- mysql connector -->
-		<mysql-connector-java.version>8.0.15</mysql-connector-java.version>
-		<mybatis.version>3.5.3</mybatis.version>
-		<mybatis-dynamic-sql.version>1.1.4</mybatis-dynamic-sql.version>
-		<!-- =============================================================== -->
-		<!-- MAVEN PLUGINS -->
-		<!-- =============================================================== -->
-		<maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-		<maven-mybatis-gen-plugin.version>1.4.0</maven-mybatis-gen-plugin.version>
-		<maven-plugin-properties.version>1.0.0</maven-plugin-properties.version>
+		
 	</properties>
 
 	<dependencies>
@@ -145,7 +151,7 @@
 					<dependency>
 						<groupId>com.sg.lab</groupId>
 						<artifactId>mybatis-maven-generator-plugins</artifactId>
-						<version>0.0.1-SNAPSHOT</version>
+						<version>${project.version}</version>
 					</dependency>
 				</dependencies>
 				<configuration>

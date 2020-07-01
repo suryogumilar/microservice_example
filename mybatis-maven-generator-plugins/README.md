@@ -1,5 +1,8 @@
 # Mybatis Generator plugins
 
+ini adalah project Java untuk implementasi plugin untuk mybatis generator.   
+Untuk menambahkan anotasi tertentu pada generated Mapper Mybatis seperti `@CacheNamespace`
+
 
 ## Link acuan/ referensi:
 
