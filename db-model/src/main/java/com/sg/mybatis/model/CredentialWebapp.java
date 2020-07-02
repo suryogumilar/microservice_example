@@ -1,8 +1,9 @@
 package com.sg.mybatis.model;
 
+import java.io.Serializable;
 import javax.annotation.Generated;
 
-public class CredentialWebapp {
+public class CredentialWebapp implements Serializable {
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: CREDENTIAL_WEBAPP.ID")
     private Integer id;
 
@@ -11,6 +12,9 @@ public class CredentialWebapp {
 
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: CREDENTIAL_WEBAPP.PASSWORD")
     private String password;
+
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: CREDENTIAL_WEBAPP")
+    private static final long serialVersionUID = 1L;
 
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: CREDENTIAL_WEBAPP.ID")
     public Integer getId() {

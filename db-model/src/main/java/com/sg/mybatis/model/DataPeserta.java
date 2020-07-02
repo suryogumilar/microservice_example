@@ -1,8 +1,9 @@
 package com.sg.mybatis.model;
 
+import java.io.Serializable;
 import javax.annotation.Generated;
 
-public class DataPeserta {
+public class DataPeserta implements Serializable {
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: DATA_PESERTA.ID")
     private Integer id;
 
@@ -17,6 +18,9 @@ public class DataPeserta {
 
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: DATA_PESERTA.ALAMAT_PESERTA")
     private String alamatPeserta;
+
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: DATA_PESERTA")
+    private static final long serialVersionUID = 1L;
 
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: DATA_PESERTA.ID")
     public Integer getId() {

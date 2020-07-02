@@ -35,9 +35,7 @@ import org.mybatis.dynamic.sql.util.mybatis3.MyBatis3Utils;
 
 @Mapper
 @CacheNamespace(
-implementation=org.mybatis.caches.ehcache.EhcacheCache.class,
-flushInterval=120000,
-readWrite=false
+implementation=com.sg.mybatis.cache.redis.RedisCache.class
 )
 public interface CredentialWebappMapper {
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: CREDENTIAL_WEBAPP")
