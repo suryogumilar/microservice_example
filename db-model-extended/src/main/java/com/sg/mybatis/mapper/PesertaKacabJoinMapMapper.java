@@ -20,7 +20,7 @@ import com.sg.mybatis.model.DataPeserta;
 import com.sg.mybatis.model.PesertaKacabJoinMap;
 
 @Mapper
-@CacheNamespace(implementation = org.mybatis.caches.ehcache.EhcacheCache.class, flushInterval = 120000, readWrite = false)
+@CacheNamespace(implementation=com.sg.mybatis.cache.redis.RedisCache.class)
 public interface PesertaKacabJoinMapMapper {
 
 	@SelectProvider(type=SqlProviderAdapter.class, method="select")
