@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!-- =============================================================== -->
+	<!-- P A R E N T Pom -->
+	<!-- =============================================================== -->
+	<!-- Holds dependencies, plugins and their versions. -->
+	<!-- Paths to external repositories... -->
+	<!-- =============================================================== -->
+
+	<parent>
+		<groupId>com.sg.lab</groupId>
+		<artifactId>microservice-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<!-- =============================================================== -->
+	<!-- A R T I F A C T Description -->
+	<!-- =============================================================== -->
+
+	<artifactId>sg-redis-lib</artifactId>
+
+	<!-- Properties -->
+	<!-- =============================================================== -->
+	<properties>
+
+	</properties>
+
+	<!-- ===================== Dependencies ===================== -->
+	<dependencies>
+		<!-- cached -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<version>${spring-boot-starter.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>${mybatis-spring-boot-starter.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- For App Context -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${spring-boot-starter.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+	
+	
+</project>
