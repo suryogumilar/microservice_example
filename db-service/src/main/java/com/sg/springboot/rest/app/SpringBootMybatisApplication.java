@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.boot.CommandLineRunner;
 import javax.sql.DataSource;
 
-@SpringBootApplication(scanBasePackages = {"com.sg.springboot.rest"})
+@SpringBootApplication(scanBasePackages = {"com.sg.springboot.rest","com.sg.mybatis.cache.redis.util"})
 @MapperScan("com.sg.mybatis.mapper")
 @EnableTransactionManagement
 public class SpringBootMybatisApplication implements CommandLineRunner {

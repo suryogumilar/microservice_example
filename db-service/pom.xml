@@ -112,6 +112,12 @@
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 			<version>${spring-boot-starter.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>${redis.clients.jedis.version}</version>
+		</dependency>
+
 
 		<!-- for development , use hot reload when changing source code during 
 			development -->

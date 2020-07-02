@@ -24,7 +24,8 @@
 		<!--  ehcache -->
 		<mybatis-ehcache.version>1.2.0</mybatis-ehcache.version>
 		<net.sf.ehcache.version>2.10.6</net.sf.ehcache.version>
-		
+		<!-- redis -->
+		<redis.clients.jedis.version>3.3.0</redis.clients.jedis.version>
 		<!-- JDBC conn pooling -->
 		<com.zaxxer.HikariCP.version>3.3.1</com.zaxxer.HikariCP.version>
 		
