@@ -33,11 +33,19 @@
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
+		<!-- our redis cache implementation -->
+		<dependency>
+			<groupId>com.sg.lab</groupId>
+			<artifactId>sg-redis-lib</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!-- Mybatis gen model -->
 		<dependency>
 			<groupId>com.sg.lab</groupId>
 			<artifactId>db-model</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<!-- our extended -->
 		<dependency>
 			<groupId>com.sg.lab</groupId>
 			<artifactId>db-model-extended</artifactId>

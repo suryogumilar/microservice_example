@@ -14,7 +14,7 @@
 		<groupId>com.sg.lab</groupId>
 		<artifactId>microservice-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-	</parent>	
+	</parent>
 
 	<!-- =============================================================== -->
 	<!-- A R T I F A C T Description -->
@@ -26,10 +26,17 @@
 	<!-- =============================================================== -->
 	<properties>
 	</properties>
-	
+
 	<!-- ===================== Dependencies ===================== -->
-	
+
 	<dependencies>
+		<!-- our redis cache implementation -->
+		<dependency>
+			<groupId>com.sg.lab</groupId>
+			<artifactId>sg-redis-lib</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>com.sg.lab</groupId>
 			<artifactId>db-model</artifactId>

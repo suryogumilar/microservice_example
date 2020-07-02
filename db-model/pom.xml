@@ -32,6 +32,13 @@
 	<!-- ===================== Dependencies ===================== -->
 
 	<dependencies>
+		<!-- our redis cache implementation -->
+		<dependency>
+			<groupId>com.sg.lab</groupId>
+			<artifactId>sg-redis-lib</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
 		<!-- cuma biar ga merah2 saat habis generated -->
 		<dependency>
 			<groupId>org.mybatis</groupId>

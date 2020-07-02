@@ -4,11 +4,9 @@
 	<context id="context1" targetRuntime="MyBatis3DynamicSql">
 		
 		<plugin type="com.sg.lab.mybatis.generator.plugins.CacheMapperIfacePlugin">
-			<property name="implementation" value="org.mybatis.caches.ehcache.EhcacheCache.class"/>
-			<property name="flushInterval" value="120000"/> <!-- milisec -->
-			<property name="readWrite" value="false" />
-			 
+			<property name="implementation" value="com.sg.mybatis.cache.redis.RedisCache.class"/>			 
 		</plugin> 
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
 		
 		<commentGenerator type="org.mybatis.generator.internal.DefaultCommentGenerator">
 			<property name="suppressDate" value="true" />
