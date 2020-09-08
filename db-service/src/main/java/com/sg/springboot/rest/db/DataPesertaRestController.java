@@ -46,7 +46,7 @@ public class DataPesertaRestController {
 	private DataPesertaMapper dataPesertaMapper;
 	@RequestMapping(name="getDataPeserta",path="/get",method=RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
 	public DataPeserta getDataPeserta(@RequestParam("id") Integer id){
-		logger.debug("get Data Peserta with id ="+id);
+		logger.info("getDataPeserta id="+id);
 		Optional<DataPeserta> dp = dataPesertaMapper.selectByPrimaryKey(id);
 		DataPeserta dataPeserta = dp.get();
 		return dataPeserta;
@@ -54,7 +54,7 @@ public class DataPesertaRestController {
 	
 	@RequestMapping(name="listDataPeserta",path="/list",method=RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
 	public List<DataPeserta> getDataPeserta(){
-		logger.debug("list data peserta");
+		logger.info("listDataPeserta");
 		SelectDSLCompleter allRows = SelectDSLCompleter.allRows();
 		List<DataPeserta> dataPesertaList = dataPesertaMapper.select(allRows);
 		return dataPesertaList;
@@ -63,7 +63,7 @@ public class DataPesertaRestController {
 	public List<DataPeserta> queryDataPeserta_get(@RequestParam(name="nama",required=false) String nama, 
 			@RequestParam(name="islike", required=false) Boolean isLike, 
 			@RequestParam(name="caseInsensitive", required=false) Boolean caseInsensitive){
-		logger.debug("query data peserta");
+		logger.info("queryDataPeserta nama="+nama);
 		
 		
 		// org.mybatis.dynamic.sql.SqlBuilder
@@ -98,7 +98,7 @@ public class DataPesertaRestController {
 	
 	@RequestMapping(name="queryDataPeserta",path="/query",method=RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE })
 	public List<DataPeserta> queryDataPeserta_post(@RequestBody(required=true) DataPesertaRequest dataPesertaRequest){
-		logger.debug("query data peserta POST");
+		logger.info("queryDataPeserta POST");
 		
 		QueryExpressionDSL<SelectModel> qedl =  
 				select(id, nomorPeserta, nik, namaPeserta, alamatPeserta)
