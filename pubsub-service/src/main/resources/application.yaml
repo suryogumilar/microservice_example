@@ -1,0 +1,4 @@
+spring:
+  main: 
+    banner-mode: "off"
+  cloud.gcp.credentials.encoded-key: "${GCP_KEY_FILE_BASE64}"
