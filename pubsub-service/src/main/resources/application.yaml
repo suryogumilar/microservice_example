@@ -1,4 +1,17 @@
+server:
+  servlet:
+    context-path: "/tspn/pubsub/v1"
+  port: 8090
+  
 spring:
   main: 
     banner-mode: "off"
-  cloud.gcp.credentials.encoded-key: "${GCP_KEY_FILE_BASE64}"
+  cloud:
+    gcp:
+      project-id: ${PROJECT_ID}
+      credentials:
+        encoded-key: "${GCP_KEY_FILE_BASE64}"
+  
+logging:
+  level:
+    org.springframework: ${LOGGING_LEVEL:INFO} 

@@ -31,7 +31,12 @@
 			<artifactId>spring-cloud-gcp-starter-pubsub</artifactId>
 			<!-- <version>${org.springframework.cloud.gcp.version}</version> -->
 		</dependency>
-
+		<!-- rest -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${spring-boot-starter.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
