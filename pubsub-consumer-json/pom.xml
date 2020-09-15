@@ -27,6 +27,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>${spring-boot-starter.version}</version>
 		</dependency>
+		<!-- payload json -->
+		<dependency>
+			<groupId>com.sg.lab</groupId>
+			<artifactId>pubsub-payload-lib</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
