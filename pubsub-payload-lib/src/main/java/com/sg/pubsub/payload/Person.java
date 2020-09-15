@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Person {
 	
-
+	public String uid;
 	/**
 	 * the name of the person.
 	 */
@@ -19,9 +19,10 @@ public class Person {
 	public final int age;
 
 	@JsonCreator
-	public Person(@JsonProperty("name") String name, @JsonProperty("age") int age) {
+	public Person(@JsonProperty("uid") String uid,@JsonProperty("name") String name, @JsonProperty("age") int age) {
 		this.name = name;
 		this.age = age;
+		this.uid = uid;
 	}
 
 	@Override
@@ -43,10 +44,18 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "Person{" + "name='" + this.name + '\'' + ", age=" + this.age + '}';
+		return "Person{" 
+				+ "uid='" + this.uid + '\''+", "
+				+ "name='" + this.name + '\'' + ", age=" + this.age + '}';
 	}
 	public String getName() {
 		return name;
+	}
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
 	}
 
 	public int getAge() {
