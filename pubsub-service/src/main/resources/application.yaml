@@ -15,3 +15,7 @@ spring:
 logging:
   level:
     org.springframework: ${LOGGING_LEVEL:INFO} 
+    com.sg.pubsub.subscribers.consumer: ${LOGGING_LEVEL_SUBSCRIBER:INFO}
+    com.sg.pubsub.controller: ${LOGGING_LEVEL_CONTROLLER:OFF}
+    com.sg.pubsub.publisher: ${LOGGING_LEVEL_PUBLISHER:OFF}
+    

@@ -7,10 +7,10 @@
 		<artifactId>microservice-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>pubsub-consumer</artifactId>
+	<artifactId>pubsub-consumer-json</artifactId>
 	<name>pubsub-consumer</name>
-	<description>PuSub Consumer using Spring channel</description>
-		<!-- ===================== Dependencies ===================== -->
+	<description>PuSub Consumer using Spring channel converter JSON</description>
+	<!-- ===================== Dependencies ===================== -->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -20,6 +20,12 @@
 			<groupId>org.springframework.integration</groupId>
 			<artifactId>spring-integration-core</artifactId>
 			<version>${springframework.version}</version>
+		</dependency>
+		<!-- jackson -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${spring-boot-starter.version}</version>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
@@ -33,7 +39,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-		<build>
+	<build>
 		<plugins>
 			<!-- Package as an executable jar/war -->
 			<plugin>
